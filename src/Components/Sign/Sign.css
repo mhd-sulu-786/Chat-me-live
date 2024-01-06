@@ -1,0 +1,23 @@
+.btn-sign{
+    color: black;
+    display: flex;
+    align-items: center;
+    background-color: white;
+    border-radius: 10px;
+    border: none;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 15px 32px;
+    font-size: 1.2rem;
+
+}
+.btn-sign img{
+    width: 40px;
+    height: 40px;
+    margin-right: 14px;
+}
+p{
+    color: white;
+    text-align: center;
+    margin-bottom: 2px;
+}
