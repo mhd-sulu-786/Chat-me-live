@@ -3,6 +3,12 @@ import G from '../assist/google-img-removebg-preview.png';
 import { getAuth, GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
 import './Sign.css';
 
+/**
+ * React component for signing in with Google.
+ *
+ * @param {object} auth - The authentication object.
+ * @return {ReactElement} The sign-in component.
+ */
 const Sign = ({ auth }) => {
   const signwithgoogle = async (e) => {
     e.preventDefault();

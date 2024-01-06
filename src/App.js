@@ -3,6 +3,10 @@ import Sign from "./Components/Sign/Sign";
 import './App.css';
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
+import { useAuthState } from "react-firebase-hooks/auth";
+import Chat from "./Components/Chat/Chat";
+
+
 
 // TODO: Replace the following with your app's Firebase project configuration
 // See: https://firebase.google.com/docs/web/learn-more#config-object
@@ -24,12 +28,14 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
 
+
 function App() {
+  const [user] = useAuthState(auth);
   return (
     <div className="App">
-      <Header/>
+      <Header auth={auth} user={user} />
       <section>
-      <Sign auth={auth} />
+     {user?<Chat user= {user}/>:<Sign auth={auth} />} 
       </section>
       
     </div>

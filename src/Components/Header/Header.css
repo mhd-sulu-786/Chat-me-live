@@ -14,5 +14,9 @@ header{
 header img{
     height: 40px;
     width: 40px;
-    
+
+}
+button{
+    background-color: transparent;
+    border: none;
 }
