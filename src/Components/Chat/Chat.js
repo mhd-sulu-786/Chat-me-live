@@ -4,6 +4,8 @@ import sender from '../assist/send-btn-removebg-preview.png';
 import { initializeApp } from 'firebase/app';
 import { getFirestore, collection, addDoc, serverTimestamp, query, orderBy, limit } from 'firebase/firestore';
 import { useCollectionData } from 'react-firebase-hooks/firestore';
+import Message from './Message';
+
 
 const Chat = ({ user }) => {
   const [message, setMessage] = useState("");
@@ -29,7 +31,7 @@ const Chat = ({ user }) => {
     e.preventDefault();
 
     const { uid, photourl } = user;
-    const photoUrlToSend = photourl || "default_photo_url";
+    const photoUrlToSend = photourl || "https://tse2.mm.bing.net/th?id=OIP.eCtFW2p0N7q8QvSsQIggiAHaFj&pid=Api&P=0&w=300&h=300";
 
     await addDoc(messagesCollection, {
       text: message,
@@ -48,7 +50,7 @@ const Chat = ({ user }) => {
   return (
     <>
       <div className='chat-window'>
-        {messages && messages.map((msg) => <span key={msg.id}>{msg.text}</span>)}
+        {messages && messages.map((msg) => <Message key={msg.id} message={msg} user={user}/>)}
       </div>
       <form onSubmit={sendMessage}>
         <input
