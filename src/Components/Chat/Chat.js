@@ -12,13 +12,13 @@ const Chat = ({ user }) => {
  const dummy = useRef()
   // Initialize Firebase with your configuration
   const firebaseConfig = {
-    apiKey: "AIzaSyDTlYOxHarGpBWHhlzzkxcK2FhjvWiYJ8c",
-    authDomain: "chat-c3f01.firebaseapp.com",
-    projectId: "chat-c3f01",
-    storageBucket: "chat-c3f01.appspot.com",
-    messagingSenderId: "409785853124",
-    appId: "1:409785853124:web:06b4c3b6e4290e7c185591",
-    measurementId: "G-F746TRWE0Y"
+    apiKey: process.env.REACT_APP_API_KEY,
+    authDomain: process.env.REACT_APP_AUTH_DOMAIN,
+    projectId: process.env.REACT_APP_PROJECT_ID,
+    storageBucket: process.env.REACT_STORAGE_BUCKET,
+    messagingSenderId: process.env.REACT_MESSAGING_SENDER_ID,
+    appId: process.env.REACT_APP_APP_ID,
+    measurementId: process.env.REACT_APP_MEASUREMENT_ID
   };
   const app = initializeApp(firebaseConfig);
   const firestore = getFirestore(app);
