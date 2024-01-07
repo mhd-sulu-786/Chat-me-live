@@ -63,5 +63,15 @@ form input{
     color: rgb(14, 13, 13);
 }
 .sent{
-    
+    flex-direction: row-reverse;
+}
+.sent p{
+    color: white;
+    background: #0b93f6;
+    align-self: flex-end;
+
+}
+.recive p{
+ background-color: white;
+ color: black;
 }
