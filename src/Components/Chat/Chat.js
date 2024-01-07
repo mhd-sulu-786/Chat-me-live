@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import './Chat.css';
 import sender from '../assist/send-btn-removebg-preview.png';
 import { initializeApp } from 'firebase/app';
-import { getFirestore, collection, addDoc, serverTimestamp } from 'firebase/firestore';
-import { getAuth } from 'firebase/auth';
+import { getFirestore, collection, addDoc, serverTimestamp, query, orderBy, limit } from 'firebase/firestore';
+import { useCollectionData } from 'react-firebase-hooks/firestore';
 
 const Chat = ({ user }) => {
   const [message, setMessage] = useState("");
@@ -20,28 +20,26 @@ const Chat = ({ user }) => {
   };
   const app = initializeApp(firebaseConfig);
   const firestore = getFirestore(app);
-  const auth = getAuth(app); // If you're using authentication
+
+  const messagesCollection = collection(firestore, "messages"); // Corrected the variable name
+  const qurey = query(messagesCollection, orderBy("createdAt"), limit(25)); // Correct usage of orderBy and limit
+  const [messages] = useCollectionData(qurey, { idField: "id" });
 
   const sendMessage = async (e) => {
     e.preventDefault();
-  
-    const messagesRef = collection(firestore, "messages");
-  
+
     const { uid, photourl } = user;
-  
-    // Check if photourl is defined, otherwise set a default value
     const photoUrlToSend = photourl || "default_photo_url";
-  
-    await addDoc(messagesRef, {
+
+    await addDoc(messagesCollection, {
       text: message,
       createdAt: serverTimestamp(),
       uid,
       photourl: photoUrlToSend,
     });
-  
+
     setMessage(""); // Clear the input after sending the message
   };
-  
 
   const handleMessageChange = (e) => {
     setMessage(e.target.value);
@@ -50,7 +48,7 @@ const Chat = ({ user }) => {
   return (
     <>
       <div className='chat-window'>
-        {/* Your chat window content goes here */}
+        {messages && messages.map((msg) => <span key={msg.id}>{msg.text}</span>)}
       </div>
       <form onSubmit={sendMessage}>
         <input
@@ -58,7 +56,6 @@ const Chat = ({ user }) => {
           onChange={handleMessageChange}
           placeholder='Type here..'
         />
-        {/* Add a button or event handler to send the message */}
         <button type='submit'>
           <img src={sender} alt='' />
         </button>
