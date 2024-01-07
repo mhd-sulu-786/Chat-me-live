@@ -1,7 +1,8 @@
-// firebase.js
 
+// firebase.js
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
+
 const firebaseConfig = {
     apiKey: "AIzaSyDTlYOxHarGpBWHhlzzkxcK2FhjvWiYJ8c",
     authDomain: "chat-c3f01.firebaseapp.com",
@@ -16,3 +17,4 @@ const app = initializeApp(firebaseConfig);
 const firestore = getFirestore(app);
 
 export default firestore;
+
