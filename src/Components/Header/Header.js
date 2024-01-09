@@ -28,7 +28,7 @@ const Header = ({ auth, user }) => {
       <button onClick={changeProfile}>
         <img src={images[picIndex]} alt='' />
       </button>
-      <h2>Hello Tell Me Something</h2>
+      <h2>Hello Tell Me Something.... </h2>
       {user && (
         <button onClick={handleSignOut}>
           <img src={sign} alt='' />
