@@ -12,34 +12,39 @@ form{
     height: 10vh;
     position: fixed;
     bottom: 0;
-    background-color: rgb(48, 46, 46);
+    background-color: rgb(15, 13, 13);
     width: 100%;
     max-width: 728px;
     font-size: 1.5rem;
     display: flex;
+
 }
 form button{
     width: 20%;
-    background-color: rgb(98, 71, 71);
-     border: none;
+    background-color: rgb(12, 74, 14);
+     border-radius: 50%;
      display: flex;
      justify-content: center;
      align-items: center;
+     margin: 6px;
+    
     
 }
 form button img{
     width: 38px;
     height: 42px;
+   
 }
 form input{
     line-height: 1.5;
     width: 100%;
-    font-size: 1.5rem;
-    background-color: rgb(74, 54, 54);
+    font-size: 1rem;
+    background-color: rgb(207, 201, 201);
     color: white;
     outline: 0;
-    border: none;
+    border-radius: 30px;
     padding: 0 10px;
+    margin: 4px;
 }
 .messege-shower{
  display: flex;   

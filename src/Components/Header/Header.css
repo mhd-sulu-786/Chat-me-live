@@ -14,9 +14,31 @@ header{
 header img{
     height: 40px;
     width: 40px;
+    border-radius:  50%;
 
 }
 button{
     background-color: transparent;
     border: none;
 }
+h2{
+margin: -1.5px;
+font-family: "Comic Sans MS", cursive, sans-serif;
+font-size: 25px;
+letter-spacing: 2px;
+word-spacing: 2px;
+color: #12dd04;
+font-weight: normal;
+text-decoration: none;
+font-style: normal;
+font-variant: normal;
+text-transform: none;
+  overflow: hidden;
+  transition: .3s;
+
+}
+h2:hover {
+    text-shadow: 
+      0 -1.4em #11c535, 
+      0 0 #1095c1;
+  }
