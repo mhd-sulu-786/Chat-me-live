@@ -1,11 +1,12 @@
-import React from 'react'
+import React from 'react';
+import profile from '../assist/profile.jpeg';
 
 const Message = ({message,user}) => {
     const {text,uid, photourl}=message;
    const messegeClass = uid===user.uid?"sent":"recive";
   return (
     <div className={`messege-shower ${messegeClass}`}>
-      <img src={photourl} alt=''/>
+      <img src={photourl || profile} alt=''/>
       <p>{text}</p>
     </div>
   )
