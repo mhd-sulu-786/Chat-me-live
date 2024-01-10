@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 import logo from '../assist/logo-chat-img-removebg-preview.png';
 import sign from '../assist/th-removebg-preview.png';
 import './Header.css';
+import Swal from 'sweetalert2';
+import 'sweetalert2/dist/sweetalert2.min.css';
+
 
 const Header = ({ auth, user }) => {
   const [picIndex, setPicIndex] = useState(0);
@@ -15,12 +18,20 @@ const Header = ({ auth, user }) => {
 
   ];
 
-  const handleSignOut = () => {
-    const confirm = window.confirm('Are you sure to logout?');
-    if(confirm){
+  const handleSignOut = async () => {
+    const result = await Swal.fire({
+      title: 'Are you sure to logout?',
+      icon: 'question',
+      showCancelButton: true,
+      confirmButtonColor: '#4caf50',
+      cancelButtonColor: '#ccc',
+      confirmButtonText: 'Yes, Logout',
+    });
+  
+    if (result.isConfirmed) {
       auth.signOut();
     }else{
-      
+
     }
    
   };
