@@ -6,7 +6,7 @@ const Message = ({message,user}) => {
    const messegeClass = uid===user.uid?"sent":"recive";
   return (
     <div className={`messege-shower ${messegeClass}`}>
-      <img src={messegeClass==="sent"?photourl: profile} alt=''/>
+      <img src={messegeClass==="sent"?photourl:profile} alt=''/>
       <p>{text}</p>
     </div>
   )
