@@ -151,16 +151,17 @@ const Chat = ({ user }) => {
           <input
             value={message}
             onChange={handleMessageChange}
+            {showEmojiPicker && (
+              <Picker
+                onSelect={handleEmojiClick}
+                emojiTooltip={true}
+                style={{ position: 'absolute', bottom: '80px', right: '10px' }}
+              />
+            )}
             placeholder='Type here..'
           />
         </div>
-        {showEmojiPicker && (
-          <Picker
-            onSelect={handleEmojiClick}
-            emojiTooltip={true}
-            style={{ position: 'absolute', bottom: '80px', right: '10px' }}
-          />
-        )}
+      
         <button type='submit'>
           <img src={sender} alt='' />
         </button>
