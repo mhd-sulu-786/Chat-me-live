@@ -77,7 +77,6 @@ import { initializeApp } from 'firebase/app';
 import { getFirestore, collection, addDoc, serverTimestamp, query, orderBy, limit } from 'firebase/firestore';
 import { useCollectionData } from 'react-firebase-hooks/firestore';
 import { Picker } from 'emoji-mart';
-import 'emoji-mart/css/emoji-mart.css';
 import Message from './Message';
 
 const Chat = ({ user }) => {
