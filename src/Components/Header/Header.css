@@ -38,7 +38,7 @@ text-transform: none;
 
 }
 h2:hover {
-    text-shadow: 
-      0 -1.5em #11c535, 
-      0 0 #1095c1;
+    color: #ffee10;
+  box-shadow: 0 0 5px #ffee10;
+  text-shadow: 0 0 5px #ffee10;
   }
