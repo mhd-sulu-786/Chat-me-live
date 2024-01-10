@@ -1,6 +1,6 @@
 import React from 'react';
 import G from '../assist/google-img-removebg-preview.png';
-import { getAuth, GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
+import {  GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
 import './Sign.css';
 
 /**
