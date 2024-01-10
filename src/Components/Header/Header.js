@@ -16,7 +16,13 @@ const Header = ({ auth, user }) => {
   ];
 
   const handleSignOut = () => {
-    auth.signOut();
+    const confirm = window.confirm('Are you sure to logout?');
+    if(confirm){
+      auth.signOut();
+    }else{
+      
+    }
+   
   };
 
   const changeProfile = () => {
