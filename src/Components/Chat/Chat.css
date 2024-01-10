@@ -39,7 +39,7 @@ form input{
     line-height: 1.5;
     width: 100%;
     font-size: 1rem;
-    background-color: rgb(155, 149, 149);
+    background-color: rgb(218, 203, 203);
     color: rgb(42, 40, 40);
     outline: 0;
     border-radius: 30px;
@@ -72,11 +72,15 @@ form input{
 }
 .sent p{
     color: white;
-    background: #0b93f6;
+    background: #070fa0;
     align-self: flex-end;
+    font-family: Arial;
+    border-radius: 15px;
 
 }
 .recive p{
  background-color: white;
  color: black;
+ font-family: Arial;
+ border-radius: 15px;
 }
