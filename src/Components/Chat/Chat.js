@@ -1,4 +1,4 @@
-/*import React, { useState,useRef } from 'react';
+import React, { useState,useRef } from 'react';
 import './Chat.css';
 import sender from '../assist/send-btn-removebg-preview.png';
 import { initializeApp } from 'firebase/app';
@@ -71,7 +71,8 @@ const Chat = ({ user }) => {
   );
 };
 
-export default Chat;*/
+export default Chat;
+/*
 import React, { useState, useRef } from 'react';
 import './Chat.css';
 import sender from '../assist/send-btn-removebg-preview.png';
@@ -163,4 +164,4 @@ const Chat = ({ user }) => {
   );
 };
 
-export default Chat;
+export default Chat;*/
