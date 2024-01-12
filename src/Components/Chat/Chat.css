@@ -1,8 +1,10 @@
 .chat-window{
     height: 80vh;
+    width: 100%;
     padding: 10px;
     margin: 10vh 0 10vh;
-    background-image: url(../assist/chat.jpeg);
+    background: rgb(238,174,202);
+    background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
     background-size: contain;
     display: flex;
     flex-direction: column;
@@ -71,8 +73,9 @@ form input{
     flex-direction: row-reverse;
 }
 .sent p{
+    
+    background-color: #070fa0;
     color: white;
-    background: #070fa0;
     align-self: flex-end;
     font-family: Arial;
     border-radius: 15px;
