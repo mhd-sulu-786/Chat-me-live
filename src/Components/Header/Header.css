@@ -18,6 +18,10 @@ header img{
     border-radius:  50%;
 
 }
+.Pf{
+    border-color: black;
+   border: solid 2px;
+}
 button{
     background-color: transparent;
     border: none;
@@ -28,7 +32,7 @@ font-family: 'Merienda';
 font-size: 25px;
 letter-spacing: 2px;
 word-spacing: 2px;
-color: #708090;
+color: #313437;
 font-weight: normal;
 text-decoration: none;
 font-style: normal;

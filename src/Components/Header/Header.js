@@ -43,7 +43,7 @@ const Header = ({ auth, user }) => {
   return (
     <header>
       <button onClick={changeProfile}>
-        <img src={images[picIndex]} alt='' />
+        <img className='Pf' src={images[picIndex]} alt='' />
       </button>
       <h2>Hello Tell Me Something.... </h2>
       {user && (
