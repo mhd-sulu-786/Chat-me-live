@@ -64,7 +64,7 @@ const Chat = ({ user }) => {
           //click on emoji button select emojis
         />
         <button type='submit'>
-          <img src={sender} alt='' />
+          <img src={msg!=""?sender} alt='' />
         </button>
       </form>
     </>
