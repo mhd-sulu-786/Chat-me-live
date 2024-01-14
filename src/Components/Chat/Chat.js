@@ -29,17 +29,20 @@ const Chat = ({ user }) => {
 
   const sendMessage = async (e) => {
     e.preventDefault();
-
-    const { uid, photourl } = user;
+   if (message==="") {
+    
+   }else{
+    const { uid, photourl, } = user;
     const photoUrlToSend = photourl || "https://tse2.mm.bing.net/th?id=OIP.eCtFW2p0N7q8QvSsQIggiAHaFj&pid=Api&P=0&w=300&h=300";
-
+   console.log(serverTimestamp());
     await addDoc(messagesCollection, {
       text: message,
       createdAt: serverTimestamp(),
       uid,
       photourl: photoUrlToSend,
+   
     });
-
+   }
     setMessage(""); // Clear the input after sending the message
     dummy.current.scrollIntoView({ behavior: "smooth" });
 
