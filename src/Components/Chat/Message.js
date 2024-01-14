@@ -4,7 +4,8 @@ import profile from '../assist/profile.jpeg';
 const Message = ({message,user}) => {
     const {text,uid,createdAt, photourl}=message;
    const messegeClass = uid===user.uid?"sent":"recive";
-   const messageTime = createdAt ? new Date(createdAt.toDate()).toLocaleTimeString() : '';
+   const messageTime =     createdAt && createdAt.toDate().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+
 
   return (
     <div className={`messege-shower ${messegeClass}`}>
