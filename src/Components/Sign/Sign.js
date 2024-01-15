@@ -36,7 +36,7 @@ const Sign = ({ auth }) => {
         Sign to start chat..!
         <button className='btn-sign' onClick={signwithgoogle}>
           <img src={G} alt='' />
-          <span>Sign with Google</span>
+          <span className='text-span'>Sign with Google</span>
         </button>
       </p>
     </div>

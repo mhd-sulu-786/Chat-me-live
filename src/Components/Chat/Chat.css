@@ -78,6 +78,8 @@ form input{
     align-self: flex-end;
     font-family: Arial;
     border-radius: 15px;
+    margin: 0;
+    padding: 2px;
 
 }
 .recive p{
@@ -85,15 +87,17 @@ form input{
  color: white;
  font-family: Arial;
  border-radius: 15px;
+ margin: 0;
+ padding: 2px;
 }
 span{
 color: rgb(195, 191, 191);
 text-align: end;
 font-size: 7.5px;
-padding:2px;
+padding: 0;
 bottom:0;
 margin:0;
-margin-left:-3px;
+
 
 }
 .user-gmail{
