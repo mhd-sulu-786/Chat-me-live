@@ -78,18 +78,14 @@ form input{
     align-self: flex-end;
     font-family: Arial;
     border-radius: 15px;
-    margin: 0;
-    padding: 2px;
-
+    
 }
 .recive p{
  background-color: black;
  color: white;
  font-family: Arial;
  border-radius: 15px;
- margin: 0;
- padding: 2px;
-}
+ 
 span{
 color: rgb(195, 191, 191);
 text-align: end;
