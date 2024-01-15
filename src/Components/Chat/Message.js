@@ -17,11 +17,6 @@ const Message = ({ message, user }) => {
 
       {/*messegeClass === "sent" && <span className='user-gmail'>{user.displayName}</span>*/}
         <br />
-<span className='user-gmail'>{user.displayName}</span>
-        <br /><br />
-
-      {messegeClass === "sent" && <span className='user-gmail'>{user.displayName}</span>}
-        <br />
 
         {/* next line */}
         {text}<br />
