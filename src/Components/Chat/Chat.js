@@ -32,7 +32,7 @@ const Chat = ({ user }) => {
    if (message==="") {
     
    }else{
-    const { uid, photourl, } = user;
+    const { uid, photourl,gamil } = user;
     const photoUrlToSend = photourl || "https://tse2.mm.bing.net/th?id=OIP.eCtFW2p0N7q8QvSsQIggiAHaFj&pid=Api&P=0&w=300&h=300";
    console.log(serverTimestamp());
     await addDoc(messagesCollection, {
@@ -40,6 +40,7 @@ const Chat = ({ user }) => {
       createdAt: serverTimestamp(),
       uid,
       photourl: photoUrlToSend,
+      gmail:gamil||"user@gmail.com"
    
     });
    }
