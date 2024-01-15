@@ -27,13 +27,13 @@ const Header = ({ auth, user }) => {
       cancelButtonColor: '#ccc',
       confirmButtonText: 'Yes, Logout',
     });
-  
+
     if (result.isConfirmed) {
       auth.signOut();
-    }else{
+    } else {
 
     }
-   
+
   };
 
   const changeProfile = () => {

@@ -1,6 +1,6 @@
 import React from 'react';
 import G from '../assist/google-img-removebg-preview.png';
-import {  GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
+import { GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
 import './Sign.css';
 
 /**
@@ -11,20 +11,20 @@ import './Sign.css';
  */
 const onSignIn = (userData) => {
   // Your logic for handling user sign-in
-  
-  
+
+
 };
 const Sign = ({ auth }) => {
   const signwithgoogle = async (e) => {
     e.preventDefault();
     const provider = new GoogleAuthProvider();
     try {
-     const result= await signInWithPopup(auth, provider);
-     const user = result.user;
-     onSignIn({
-      userEmail: user.email,
-      userName: user.displayName,
-    });
+      const result = await signInWithPopup(auth, provider);
+      const user = result.user;
+      onSignIn({
+        userEmail: user.email,
+        userName: user.displayName,
+      });
     } catch (error) {
       console.error('Error signing in with Google:', error);
     }

@@ -1,4 +1,4 @@
-import React, { useState,useRef } from 'react';
+import React, { useState, useRef } from 'react';
 import './Chat.css';
 import sender from '../assist/send-btn-removebg-preview.png';
 import { initializeApp } from 'firebase/app';
@@ -9,7 +9,7 @@ import Message from './Message';
 
 const Chat = ({ user }) => {
   const [message, setMessage] = useState("");
- const dummy = useRef()
+  const dummy = useRef()
   // Initialize Firebase with your configuration
   const firebaseConfig = {
     apiKey: process.env.REACT_APP_API_KEY,
@@ -29,21 +29,21 @@ const Chat = ({ user }) => {
 
   const sendMessage = async (e) => {
     e.preventDefault();
-   if (message==="") {
-    
-   }else{
-    const { uid, photourl } = user;
-    const photoUrlToSend = photourl || "https://tse2.mm.bing.net/th?id=OIP.eCtFW2p0N7q8QvSsQIggiAHaFj&pid=Api&P=0&w=300&h=300";
-   console.log(serverTimestamp());
-    await addDoc(messagesCollection, {
-      text: message,
-      createdAt: serverTimestamp(),
-      uid,
-      photourl: photoUrlToSend,
-      // gmail:gamil
-   
-    });
-   }
+    if (message === "") {
+
+    } else {
+      const { uid, photourl } = user;
+      const photoUrlToSend = photourl || "https://tse2.mm.bing.net/th?id=OIP.eCtFW2p0N7q8QvSsQIggiAHaFj&pid=Api&P=0&w=300&h=300";
+      console.log(serverTimestamp());
+      await addDoc(messagesCollection, {
+        text: message,
+        createdAt: serverTimestamp(),
+        uid,
+        photourl: photoUrlToSend,
+        // gmail:gamil
+
+      });
+    }
     setMessage(""); // Clear the input after sending the message
     dummy.current.scrollIntoView({ behavior: "smooth" });
 
@@ -56,7 +56,7 @@ const Chat = ({ user }) => {
   return (
     <>
       <div className='chat-window'>
-        {messages && messages.map((msg) => <Message key={msg.id} message={msg} user={user} /*user_data={user_data}*//>)}
+        {messages && messages.map((msg) => <Message key={msg.id} message={msg} user={user} /*user_data={user_data}*/ />)}
         <span ref={dummy}></span>
       </div>
       <form onSubmit={sendMessage}>
@@ -64,8 +64,8 @@ const Chat = ({ user }) => {
           value={message}
           onChange={handleMessageChange}
           placeholder='Type here..'
-          //add here a button emjoi
-          //click on emoji button select emojis
+        //add here a button emjoi
+        //click on emoji button select emojis
         />
         <button type='submit'>
           <img src={sender} alt='' />

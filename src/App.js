@@ -33,11 +33,11 @@ function App() {
   const [user] = useAuthState(auth);
   return (
     <div className="App">
-      <Header auth={auth} user={user}  />
+      <Header auth={auth} user={user} />
       <section>
-     {user?<Chat user= {user} /> :<Sign auth={auth} />} 
+        {user ? <Chat user={user} /> : <Sign auth={auth} />}
       </section>
-      
+
     </div>
   );
 }
