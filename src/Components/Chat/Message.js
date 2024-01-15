@@ -15,12 +15,17 @@ const Message = ({ message, user }) => {
       <img src={messegeClass === "sent" ? photourl : 'https://tse3.mm.bing.net/th?id=OIP.cC-2qUAIWmvXAvxhUlnnLAHaH5&pid=Api&P=0&h=180' || profile} alt='https://tse3.mm.bing.net/th?id=OIP.cC-2qUAIWmvXAvxhUlnnLAHaH5&pid=Api&P=0&h=180' />
       <p>
 <<<<<<< HEAD
+<<<<<<< HEAD
       {messegeClass === "sent" && <span className='user-gmail'>{user.displayName}</span>}
         <br />
 =======
         <span className='user-gmail'>{user.displayName}</span>
         <br /><br />
 >>>>>>> f272f29 (almost  finish)
+=======
+      {messegeClass === "sent" && <span className='user-gmail'>{user.displayName}</span>}
+        <br />
+>>>>>>> 2f2a644 (m)
         {/* next line */}
         {text}<br />
 
