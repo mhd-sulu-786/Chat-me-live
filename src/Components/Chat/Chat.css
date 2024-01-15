@@ -104,6 +104,6 @@ margin:0;
     color: rgb(54, 238, 54);
 }
 .sent .user-gmail{
-    display: block;
+    display: none;
     
 }
