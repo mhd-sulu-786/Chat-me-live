@@ -7,7 +7,7 @@ import { useCollectionData } from 'react-firebase-hooks/firestore';
 import Message from './Message';
 
 
-const Chat = ({ user,user_data }) => {
+const Chat = ({ user }) => {
   const [message, setMessage] = useState("");
  const dummy = useRef()
   // Initialize Firebase with your configuration
@@ -56,7 +56,7 @@ const Chat = ({ user,user_data }) => {
   return (
     <>
       <div className='chat-window'>
-        {messages && messages.map((msg) => <Message key={msg.id} message={msg} user={user} user_data={user_data}/>)}
+        {messages && messages.map((msg) => <Message key={msg.id} message={msg} user={user} /*user_data={user_data}*//>)}
         <span ref={dummy}></span>
       </div>
       <form onSubmit={sendMessage}>

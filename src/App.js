@@ -1,5 +1,5 @@
 import Header from "./Components/Header/Header";
-import Sign,{onSignIn} from "./Components/Sign/Sign";
+import Sign from "./Components/Sign/Sign";
 import './App.css';
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
@@ -35,7 +35,7 @@ function App() {
     <div className="App">
       <Header auth={auth} user={user}  />
       <section>
-     {user?<Chat user= {user} user_data={onSignIn}/> :<Sign auth={auth} />} 
+     {user?<Chat user= {user} /> :<Sign auth={auth} />} 
       </section>
       
     </div>

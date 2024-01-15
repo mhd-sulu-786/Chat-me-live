@@ -12,7 +12,7 @@ import './Sign.css';
 const onSignIn = (userData) => {
   // Your logic for handling user sign-in
   
-  console.log('User signed in:', );
+  
 };
 const Sign = ({ auth }) => {
   const signwithgoogle = async (e) => {
