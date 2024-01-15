@@ -9,12 +9,21 @@ import './Sign.css';
  * @param {object} auth - The authentication object.
  * @return {ReactElement} The sign-in component.
  */
+const onSignIn = (userData) => {
+  // Your logic for handling user sign-in
+  console.log('User signed in:', userData);
+};
 const Sign = ({ auth }) => {
   const signwithgoogle = async (e) => {
     e.preventDefault();
     const provider = new GoogleAuthProvider();
     try {
-      await signInWithPopup(auth, provider);
+     const result= await signInWithPopup(auth, provider);
+     const user = result.user;
+     onSignIn({
+      userEmail: user.email,
+      userName: user.displayName,
+    });
     } catch (error) {
       console.error('Error signing in with Google:', error);
     }
@@ -33,4 +42,4 @@ const Sign = ({ auth }) => {
   );
 }
 
-export default Sign;
+export { Sign as default, onSignIn };  

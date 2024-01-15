@@ -20,4 +20,8 @@ p{
     color: white;
     text-align: center;
     margin-bottom: 2px;
+}span{
+    color: black;
+    font-size: 15.5px;
+    font-family: Arial, Helvetica, sans-serif;
 }

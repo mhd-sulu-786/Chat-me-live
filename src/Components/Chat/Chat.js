@@ -7,7 +7,7 @@ import { useCollectionData } from 'react-firebase-hooks/firestore';
 import Message from './Message';
 
 
-const Chat = ({ user }) => {
+const Chat = ({ user,user_data }) => {
   const [message, setMessage] = useState("");
  const dummy = useRef()
   // Initialize Firebase with your configuration
@@ -32,7 +32,7 @@ const Chat = ({ user }) => {
    if (message==="") {
     
    }else{
-    const { uid, photourl,gamil } = user;
+    const { uid, photourl } = user;
     const photoUrlToSend = photourl || "https://tse2.mm.bing.net/th?id=OIP.eCtFW2p0N7q8QvSsQIggiAHaFj&pid=Api&P=0&w=300&h=300";
    console.log(serverTimestamp());
     await addDoc(messagesCollection, {
@@ -40,7 +40,7 @@ const Chat = ({ user }) => {
       createdAt: serverTimestamp(),
       uid,
       photourl: photoUrlToSend,
-      gmail:gamil||"user@gmail.com"
+      // gmail:gamil
    
     });
    }
@@ -56,7 +56,7 @@ const Chat = ({ user }) => {
   return (
     <>
       <div className='chat-window'>
-        {messages && messages.map((msg) => <Message key={msg.id} message={msg} user={user}/>)}
+        {messages && messages.map((msg) => <Message key={msg.id} message={msg} user={user} user_data={user_data}/>)}
         <span ref={dummy}></span>
       </div>
       <form onSubmit={sendMessage}>
