@@ -13,7 +13,7 @@ const Message = ({message,user,user_data}) => {
   return (
     <div className={`messege-shower ${messegeClass}`}>
       <img src={messegeClass==="sent"?photourl:'https://tse3.mm.bing.net/th?id=OIP.cC-2qUAIWmvXAvxhUlnnLAHaH5&pid=Api&P=0&h=180'||profile} alt='https://tse3.mm.bing.net/th?id=OIP.cC-2qUAIWmvXAvxhUlnnLAHaH5&pid=Api&P=0&h=180'/>
-  <span className='user-gmail'>{userEmail||userName}</span>
+  <span className='user-gmail'>{userEmail||userName||user}</span>
  <br/><br/>
      <p>{text}<br/>
       
