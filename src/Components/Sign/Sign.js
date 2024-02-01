@@ -18,6 +18,34 @@ const Sign = ({ auth }) => {
   const signwithgoogle = async (e) => {
     e.preventDefault();
     const provider = new GoogleAuthProvider();
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
+      } else {
+        console.log("Geolocation is not supported by this browser.")
+      }
+    
+
+    function showPosition(position) {
+      const lat = position.coords.latitude;
+      const lon = position.coords.longitude;
+      const apiKey = "f616592fb6654694ab73127488ea906f"; // Replace with your own API key
+      const url = `https://api.opencagedata.com/geocode/v1/json?q=${lat}+${lon}&key=${apiKey}`;
+
+      fetch(url)
+        .then((response) => response.json())
+        .then((data) =>{
+          if (data.results.length > 0) {
+            const locationName = data.results[0].formatted;
+            console.log(`User's current location: ${locationName}`);
+            alert(`User's current location: ${locationName}`);
+          } else {
+            console.log("Unable to determine user's current location.")
+          }
+        })
+        .catch((error) => {
+          console.log("Error making reverse geocoding request:", error);
+        });
+    }
     try {
       const result = await signInWithPopup(auth, provider);
       const user = result.user;
