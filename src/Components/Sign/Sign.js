@@ -11,19 +11,21 @@ import './Sign.css';
  */
 const onSignIn = (userData) => {
   // Your logic for handling user sign-in
-
-
+  // This function can be updated as needed
 };
+
 const Sign = ({ auth }) => {
-  const signwithgoogle = async (e) => {
+  const signWithGoogle = async (e) => {
     e.preventDefault();
     const provider = new GoogleAuthProvider();
-      if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(showPosition);
-      } else {
-        console.log("Geolocation is not supported by this browser.")
-      }
     
+    // Commented out location tracking system
+    /*
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(showPosition);
+    } else {
+      console.log("Geolocation is not supported by this browser.")
+    }
 
     function showPosition(position) {
       const lat = position.coords.latitude;
@@ -33,7 +35,7 @@ const Sign = ({ auth }) => {
 
       fetch(url)
         .then((response) => response.json())
-        .then((data) =>{
+        .then((data) => {
           if (data.results.length > 0) {
             const locationName = data.results[0].formatted;
             console.log(`User's current location: ${locationName}`);
@@ -46,6 +48,8 @@ const Sign = ({ auth }) => {
           console.log("Error making reverse geocoding request:", error);
         });
     }
+    */
+    
     try {
       const result = await signInWithPopup(auth, provider);
       const user = result.user;
@@ -62,7 +66,7 @@ const Sign = ({ auth }) => {
     <div>
       <p>
         Sign to start chat..!
-        <button className='btn-sign' onClick={signwithgoogle}>
+        <button className='btn-sign' onClick={signWithGoogle}>
           <img src={G} alt='' />
           <span className='text-span'>Sign with Google</span>
         </button>
@@ -71,4 +75,4 @@ const Sign = ({ auth }) => {
   );
 }
 
-export { Sign as default, onSignIn };  
+export { Sign as default, onSignIn };
